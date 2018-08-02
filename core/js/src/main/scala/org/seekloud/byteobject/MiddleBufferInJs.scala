@@ -7,6 +7,16 @@ import scala.scalajs.js
   * Date: 7/12/2018
   * Time: 11:02 AM
   */
+
+object MiddleBufferInJs {
+
+  def apply(array: js.typedarray.ArrayBuffer): MiddleBufferInJs = new MiddleBufferInJs(array)
+
+  def apply(size: Int): MiddleBufferInJs = new MiddleBufferInJs(size)
+
+}
+
+
 class MiddleBufferInJs private() extends MiddleBuffer {
 
 

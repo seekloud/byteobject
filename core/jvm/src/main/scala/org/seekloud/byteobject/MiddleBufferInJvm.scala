@@ -7,6 +7,17 @@ import java.nio.ByteBuffer
   * Date: 7/12/2018
   * Time: 11:23 AM
   */
+
+object MiddleBufferInJvm {
+
+  def apply(array: Array[Byte]): MiddleBufferInJvm = new MiddleBufferInJvm(array)
+
+  def apply(buffer: ByteBuffer): MiddleBufferInJvm = new MiddleBufferInJvm(buffer)
+
+  def apply(size: Int): MiddleBufferInJvm = new MiddleBufferInJvm(size)
+
+}
+
 class MiddleBufferInJvm private() extends MiddleBuffer {
 
   private[this] var data: ByteBuffer = _
@@ -21,7 +32,7 @@ class MiddleBufferInJvm private() extends MiddleBuffer {
     data = buffer
   }
 
-  def this(size: Int) = {
+  def this(size: Int) {
     this()
     data = ByteBuffer.allocate(size)
   }

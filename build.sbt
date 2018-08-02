@@ -34,7 +34,7 @@ lazy val coreJS = core.js
 
 
 
-lazy val exampleInJVM = project.in(file("example/inJVM"))
+lazy val jvmExample = project.in(file("example/inJVM"))
   .dependsOn(coreJVM)
   .settings(
     name := "JvmExample",
@@ -42,7 +42,7 @@ lazy val exampleInJVM = project.in(file("example/inJVM"))
   )
 
 
-lazy val exampleInJS = project.in(file("example/inJS"))
+lazy val jsExample = project.in(file("example/inJS"))
   .dependsOn(coreJS)
   .enablePlugins(ScalaJSPlugin)
   .settings(
