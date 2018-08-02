@@ -1,4 +1,8 @@
-# byte communication implement.
+# byteObject
+目标: 方便的将`case class`序列化为二进制进行传输或者存储;  
+参考了[circe](https://github.com/circe/circe)处理json的方式, 除了标准库和[shapeless](https://github.com/milessabin/shapeless), 没有其他依赖;  
+欢迎提出你宝贵的建议和意见;  
+
 
 ## MiddleBuffer
 1. `trait MiddleBuffer`是用于进行二进制转换的中间数据数据结构; 
