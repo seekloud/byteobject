@@ -25,8 +25,8 @@
 例子，假设消息定义如下：
  ```
    sealed trait Msg
-   case class TextMsg(id: Int, data: String, value: Float) extends Msg
-   case class MultiTextMsg(id: Int, b: Option[Boolean], ls: List[TextMsg]) extends Msg
+   final case class TextMsg(id: Int, data: String, value: Float) extends Msg
+   final case class MultiTextMsg(id: Int, b: Option[Boolean], ls: List[TextMsg]) extends Msg
 
  ```
  目前已经支持全部scala基础类型；
