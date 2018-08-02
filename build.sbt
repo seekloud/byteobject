@@ -3,7 +3,7 @@ import sbtcrossproject.CrossPlugin.autoImport.{crossProject, CrossType}
 
 lazy val baseSettings = Seq(
   scalaVersion := "2.12.6",
-  version := "0.1.0",
+  version := "0.1.1-SNAPSHOT",
   organization := "org.seekloud",
   scalacOptions ++= Seq(
     //"-deprecation",
