@@ -2,14 +2,13 @@ import sbtcrossproject.CrossPlugin.autoImport.{crossProject, CrossType}
 
 
 lazy val baseSettings = Seq(
+  version := "0.1.2-SNAPSHOT",
   scalaVersion := "2.12.6",
-  version := "0.1.1",
   organization := "org.seekloud",
   scalacOptions ++= Seq(
     //"-deprecation",
     "-feature"
   ),
-//  useGpg := true,
   javacOptions ++= Seq("-encoding", "UTF-8")
 )
 
