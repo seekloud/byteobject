@@ -3,7 +3,7 @@ import sbtcrossproject.CrossPlugin.autoImport.{crossProject, CrossType}
 
 lazy val baseSettings = Seq(
   scalaVersion := "2.12.6",
-  version := "0.1.1-SNAPSHOT",
+  version := "0.1.1",
   organization := "org.seekloud",
   scalacOptions ++= Seq(
     //"-deprecation",
@@ -77,7 +77,7 @@ lazy val publishSettings = Seq(
   // 本地maven仓库位置
 /*  publishTo := Some(
     Resolver.file("file", new File(Path.userHome.absolutePath + "/repos"))),
-*/
+*/pomIncludeRepository := { _ => false },
   publishMavenStyle := true,
   publishArtifact in Test := false,
   pomExtra :=
