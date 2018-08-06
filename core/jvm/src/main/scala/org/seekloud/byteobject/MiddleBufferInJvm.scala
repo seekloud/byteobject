@@ -90,11 +90,12 @@ class MiddleBufferInJvm private() extends MiddleBuffer {
     //    println(s"result length: $length")
     data.flip()
     val rst = new Array[Byte](data.limit())
-    var c = 0
+    data.get(rst)
+/*    var c = 0
     while (data.hasRemaining) {
       rst(c) = data.get()
       c += 1
-    }
+    }*/
     rst
   }
 
