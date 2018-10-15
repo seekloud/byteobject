@@ -3,6 +3,8 @@ package org.seekloud.byteobject
 import shapeless.labelled.FieldType
 import shapeless.{:+:, ::, CNil, Coproduct, HList, HNil, Inl, Inr, LabelledGeneric, Lazy, Witness}
 
+import scala.collection.immutable.Queue
+
 /**
   * User: Taoz
   * Date: 7/15/2018
@@ -72,7 +74,15 @@ package object encoder {
         buffer
       }
     }
-
+  
+    implicit def queueEncoder[A](implicit enc: BytesEncoder[A]): BytesEncoder[Queue[A]] = {
+      instance { (arr, buffer) =>
+        buffer.putInt(arr.length)
+        arr.foreach { item => enc.encode(item, buffer) }
+        buffer
+      }
+    }
+    
     implicit def mapEncoder[K, V](
       implicit kEnc: BytesEncoder[K], vEnc: BytesEncoder[V]
     ): BytesEncoder[Map[K, V]] = {

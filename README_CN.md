@@ -30,6 +30,7 @@
 
  ```
  目前已经支持全部scala基础类型；
+ 0.1.2版本，新增了对scala.collection.immutable.Queue的支持
  
 
 

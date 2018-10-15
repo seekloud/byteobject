@@ -2,7 +2,7 @@ import sbtcrossproject.CrossPlugin.autoImport.{crossProject, CrossType}
 
 
 lazy val baseSettings = Seq(
-  version := "0.1.2-SNAPSHOT",
+  version := "0.1.2",
   scalaVersion := "2.12.6",
   organization := "org.seekloud",
   scalacOptions ++= Seq(
@@ -96,6 +96,11 @@ lazy val publishSettings = Seq(
         <id>sometao</id>
         <name>Tao Zhang</name>
         <url>https://github.com/sometao</url>
+      </developer>
+      <developer>
+        <id>wxc68762040</id>
+        <name>RukaGensou</name>
+        <url>https://github.com/wxc68762040</url>
       </developer>
     </developers>
 )

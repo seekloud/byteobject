@@ -2,6 +2,7 @@ package org.seekloud.byteobject.exampleInJS
 
 import org.seekloud.byteobject.MiddleBufferInJs
 
+import scala.collection.immutable.Queue
 import scala.scalajs.js.typedarray.ArrayBuffer
 
 /**
@@ -15,12 +16,12 @@ object Test {
   sealed trait Msg
   final case class Join(name: String, num: Int, friends: List[String]) extends Msg
   final case class Left(name: String) extends Msg
-
+  final case class QueueTest(name: String, num: Int, resule: Queue[Double]) extends Msg
 
 
   def main(args: Array[String]): Unit = {
-
-    val msg: Msg = Join("A", 1001, List("B", "C"))
+  
+    val msg: Msg = QueueTest("ceshi", 123, Queue(1.0, 2.0, 3.0, 4.0))
     val bytes = encodeTest(msg)
     println("\n+++++++++++++++++++++\n")
     val decodedMsg = decodeTest(bytes)
